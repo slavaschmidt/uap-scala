@@ -1,8 +1,11 @@
+
 name := "uap-scala"
 
-version := "1.0-SNAPSHOT"
+organization := "ua-parser"
 
-scalaVersion := "2.11.4"
+version := "0.1.0"
+
+scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
   "org.yaml" % "snakeyaml" % "1.10",
@@ -17,3 +20,15 @@ includeFilter in (Compile, unmanagedResources) := "regexes.yaml"
 unmanagedResourceDirectories in Test += baseDirectory.value / "core"
 
 includeFilter in (Test, unmanagedResources) := "*.yaml"
+
+// resolvers += Resolver.bintrayRepo("slavaschmidt", "maven")
+
+bintrayOmitLicense := true
+
+publishMavenStyle := true
+
+// repository in bintray := "slavaschmidt-maven"
+
+bintrayOrganization := None
+  
+sbtPlugin := false
